@@ -1,0 +1,19 @@
+{
+  "name": "smart-wardrobe-rag-lab",
+  "private": true,
+  "type": "module",
+  "description": "M4.3 RAG lab: Smart Wardrobe PDFs → local MiniLM embeddings → Pinecone → deterministic RAG with a local Ollama model",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "extract:smart-wardrobe": "node seed/seed-smart-wardrobe-vectors.mjs",
+    "seed:smart-wardrobe:local": "node seed/seed-smart-wardrobe-local.mjs",
+    "example:rag:smart-wardrobe": "node example/rag/smart-wardrobe-local-rag.mjs"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.3.1",
+    "@pinecone-database/pinecone": "^9.0.0",
+    "unpdf": "^1.8.1"
+  }
+}

@@ -1,0 +1,29 @@
+# Secrets and credentials
+.env
+.env.*
+!env.example
+*.pem
+*.key
+*.p12
+credentials*.json
+service-account*.json
+.npmrc
+
+# Dependencies
+node_modules/
+
+# Local model caches (Transformers.js / Hugging Face)
+.cache/
+.huggingface/
+
+# Logs and temp files
+*.log
+npm-debug.log*
+tmp/
+.tmp/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

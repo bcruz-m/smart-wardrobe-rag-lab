@@ -1,0 +1,211 @@
+{
+  "generated_at": "2026-10-14T15:09:36.335Z",
+  "embedding_model": "Xenova/all-MiniLM-L6-v2",
+  "index": "bootcamp-m43-minilm",
+  "namespace": "bruna-m43",
+  "sources": [
+    "Smart_Wardrobe_Features_and_User_Guide.pdf",
+    "Smart_Wardrobe_Technical_Overview.pdf"
+  ],
+  "total_chunks": 22,
+  "chunks": [
+    {
+      "id": "features-guide-001",
+      "heading": "Document purpose",
+      "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+      "chunk_number": 1,
+      "document_title": "Smart Wardrobe — Features & User Guide",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Features & User Guide — Document purpose\nThis document is a self-contained sample product specification for the M4.3 retrieval-augmented generation (RAG) exercise. It describes intended user workflows, not a verification of implemented production features."
+    },
+    {
+      "id": "features-guide-002",
+      "heading": "1. Product concept",
+      "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+      "chunk_number": 2,
+      "document_title": "Smart Wardrobe — Features & User Guide",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Features & User Guide — 1. Product concept\nSmart Wardrobe is a personal digital wardrobe concept. Users can organize clothing items, browse their collection, assemble outfits, and receive outfit suggestions based on available wardrobe data."
+    },
+    {
+      "id": "features-guide-003",
+      "heading": "2. Adding clothing",
+      "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+      "chunk_number": 3,
+      "document_title": "Smart Wardrobe — Features & User Guide",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Features & User Guide — 2. Adding clothing\nA user adds an item by uploading a photo and reviewing its details. Relevant fields include item name, category, color, pattern, material, season, and occasion. AI-assisted classification can propose these values, but users should be able to correct incorrect suggestions."
+    },
+    {
+      "id": "features-guide-004",
+      "heading": "3. Wardrobe categories",
+      "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+      "chunk_number": 4,
+      "document_title": "Smart Wardrobe — Features & User Guide",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Features & User Guide — 3. Wardrobe categories\nThe sample taxonomy uses six top-level categories: Tops, Bottoms, Dresses, Outerwear, Shoes, and Accessories. These are example categories for the exercise and may be refined during product development."
+    },
+    {
+      "id": "features-guide-005",
+      "heading": "4. Outfit creation",
+      "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+      "chunk_number": 5,
+      "document_title": "Smart Wardrobe — Features & User Guide",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Features & User Guide — 4. Outfit creation\nA user can select multiple saved garments to create an outfit. The planned outfit builder should support manually assembled combinations and AI-assisted recommendations. A saved outfit includes a title and references to its clothing items."
+    },
+    {
+      "id": "features-guide-006",
+      "heading": "5. Personal style preferences",
+      "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+      "chunk_number": 6,
+      "document_title": "Smart Wardrobe — Features & User Guide",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Features & User Guide — 5. Personal style preferences\nThe proposed onboarding collects preferred styles, such as Minimalist, Classic, Casual, and Elegant. Preferences should influence outfit suggestions, while remaining editable later."
+    },
+    {
+      "id": "features-guide-007",
+      "heading": "6. Travel packing concept",
+      "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+      "chunk_number": 7,
+      "document_title": "Smart Wardrobe — Features & User Guide",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Features & User Guide — 6. Travel packing concept\nA future packing assistant could suggest clothing for a trip based on destination, trip duration, expected weather, and planned activities. Weather data would require an external source."
+    },
+    {
+      "id": "features-guide-008",
+      "heading": "7. User corrections and trust",
+      "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+      "chunk_number": 8,
+      "document_title": "Smart Wardrobe — Features & User Guide",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Features & User Guide — 7. User corrections and trust\nAutomatic clothing recognition may misclassify category, color, pattern, or season. Users should review AI-generated labels before relying on them. Suggestions should use saved wardrobe items rather than claim the user owns clothing that was never uploaded."
+    },
+    {
+      "id": "features-guide-009",
+      "heading": "8. Virtual try-on",
+      "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+      "chunk_number": 9,
+      "document_title": "Smart Wardrobe — Features & User Guide",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Features & User Guide — 8. Virtual try-on\nVirtual try-on is a planned advanced feature, not a capability established by this sample document. It would let users preview garments on a person using a specialized image model or provider."
+    },
+    {
+      "id": "features-guide-010",
+      "heading": "9. Example user journey",
+      "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+      "chunk_number": 10,
+      "document_title": "Smart Wardrobe — Features & User Guide",
+      "page": 2,
+      "chunk_text": "Smart Wardrobe — Features & User Guide — 9. Example user journey\nA user uploads a black blazer, corrects the proposed category to Outerwear, labels it as suitable for work, combines it with saved trousers and shoes, and saves the combination as 'Office Dinner'."
+    },
+    {
+      "id": "technical-overview-001",
+      "heading": "Document purpose",
+      "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+      "chunk_number": 1,
+      "document_title": "Smart Wardrobe — Technical Overview",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Technical Overview — Document purpose\nThis is an educational technical reference for the M4.3 RAG exercise. It distinguishes a proposed architecture from verified implementation details; no live service integration is implied."
+    },
+    {
+      "id": "technical-overview-002",
+      "heading": "1. Application context",
+      "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+      "chunk_number": 2,
+      "document_title": "Smart Wardrobe — Technical Overview",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Technical Overview — 1. Application context\nSmart Wardrobe is a mobile-first wardrobe management concept with a demonstration workflow using Expo Go. The application aims to support clothing upload, organization, outfit planning, and future virtual try-on."
+    },
+    {
+      "id": "technical-overview-003",
+      "heading": "2. Structured clothing records",
+      "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+      "chunk_number": 3,
+      "document_title": "Smart Wardrobe — Technical Overview",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Technical Overview — 2. Structured clothing records\nA suggested clothing item schema contains item_id, owner_id, image_reference, name, category, color, pattern, material, season, occasion, created_at, and updated_at. These are proposed fields rather than a confirmed current database schema."
+    },
+    {
+      "id": "technical-overview-004",
+      "heading": "3. AI classification workflow",
+      "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+      "chunk_number": 4,
+      "document_title": "Smart Wardrobe — Technical Overview",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Technical Overview — 3. AI classification workflow\nAn image-classification service may analyze a clothing photo and suggest category, color, pattern, material, and season. The app should store both the suggested values and user-approved corrections where practical."
+    },
+    {
+      "id": "technical-overview-005",
+      "heading": "4. Data storage option",
+      "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+      "chunk_number": 5,
+      "document_title": "Smart Wardrobe — Technical Overview",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Technical Overview — 4. Data storage option\nSupabase is a candidate backend for authentication, relational clothing data, and image storage. This document does not assert that Supabase is currently connected or operational in the user's app."
+    },
+    {
+      "id": "technical-overview-006",
+      "heading": "5. API responsibilities",
+      "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+      "chunk_number": 6,
+      "document_title": "Smart Wardrobe — Technical Overview",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Technical Overview — 5. API responsibilities\nAn application programming interface (API) can validate requests, associate items with authenticated users, request AI classification, and return structured results. Sensitive API keys must remain server-side and must never be embedded in a mobile client."
+    },
+    {
+      "id": "technical-overview-007",
+      "heading": "6. Modular virtual try-on",
+      "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+      "chunk_number": 7,
+      "document_title": "Smart Wardrobe — Technical Overview",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Technical Overview — 6. Modular virtual try-on\nVirtual try-on should be isolated behind a replaceable provider interface. A future implementation could swap a commercial image-generation service for an open-source model without rewriting the entire wardrobe application."
+    },
+    {
+      "id": "technical-overview-008",
+      "heading": "7. RAG laboratory architecture",
+      "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+      "chunk_number": 8,
+      "document_title": "Smart Wardrobe — Technical Overview",
+      "page": 1,
+      "chunk_text": "Smart Wardrobe — Technical Overview — 7. RAG laboratory architecture\nFor the M4.3 exercise, two PDFs are split into text chunks. Each chunk includes metadata such as document title, section heading, source filename, and chunk number. OpenAI's text-embedding-3-small model can generate 1,536-dimensional vectors. Pinecone stores these vectors in a dedicated index and namespace."
+    },
+    {
+      "id": "technical-overview-009",
+      "heading": "8. Deterministic question answering",
+      "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+      "chunk_number": 9,
+      "document_title": "Smart Wardrobe — Technical Overview",
+      "page": 2,
+      "chunk_text": "Smart Wardrobe — Technical Overview — 8. Deterministic question answering\nA deterministic RAG chain retrieves relevant document chunks before asking a language model to answer. Responses should cite the source document and section. If the retrieved material does not support an answer, the chain should explicitly state that the information is not available."
+    },
+    {
+      "id": "technical-overview-010",
+      "heading": "9. Separation of environments",
+      "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+      "chunk_number": 10,
+      "document_title": "Smart Wardrobe — Technical Overview",
+      "page": 2,
+      "chunk_text": "Smart Wardrobe — Technical Overview — 9. Separation of environments\nThe M4.3 laboratory lives in an independent folder and uses its own Pinecone namespace. It must not modify the main Smart Wardrobe application repository. A laboratory index is not the application's production database."
+    },
+    {
+      "id": "technical-overview-011",
+      "heading": "10. Limitations and security",
+      "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+      "chunk_number": 11,
+      "document_title": "Smart Wardrobe — Technical Overview",
+      "page": 2,
+      "chunk_text": "Smart Wardrobe — Technical Overview — 10. Limitations and security\nRAG retrieval may miss relevant passages, and language models may still make mistakes. Evaluate answers against the source documents, limit access to private data, and keep API credentials out of source control."
+    },
+    {
+      "id": "technical-overview-012",
+      "heading": "11. Proposed implementation sequence",
+      "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+      "chunk_number": 12,
+      "document_title": "Smart Wardrobe — Technical Overview",
+      "page": 2,
+      "chunk_text": "Smart Wardrobe — Technical Overview — 11. Proposed implementation sequence\nFirst, establish reliable clothing data entry and editable AI classifications. Second, improve outfit generation and user preferences. Third, prototype virtual try-on as a replaceable module. These are planning steps, not a claim that each milestone is complete."
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "generated_at": "2026-10-14T15:43:55.317Z",
+  "pipeline": "deterministic: embed → retrieve → score gate → local LLM (JSON evidence + answer) → code-verified evidence → code-built citations → grounding checks",
+  "embedding_model": "Xenova/all-MiniLM-L6-v2 (local, 384d)",
+  "vector_store": "Pinecone bootcamp-m43-minilm / bruna-m43",
+  "llm": "ollama/qwen2.5:3b (local)",
+  "llm_options": {
+    "temperature": 0,
+    "seed": 42,
+    "top_k": 1,
+    "num_ctx": 4096
+  },
+  "top_k": 3,
+  "min_score": 0.35,
+  "paid_apis_used": false,
+  "results": [
+    {
+      "expect": "answer",
+      "question": "What clothing categories does Smart Wardrobe use?",
+      "top_score": 0.8234,
+      "retrieved": [
+        {
+          "id": "features-guide-004",
+          "document_title": "Smart Wardrobe — Features & User Guide",
+          "heading": "3. Wardrobe categories",
+          "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+          "page": 1,
+          "score": 0.8234
+        },
+        {
+          "id": "features-guide-003",
+          "document_title": "Smart Wardrobe — Features & User Guide",
+          "heading": "2. Adding clothing",
+          "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+          "page": 1,
+          "score": 0.7615
+        },
+        {
+          "id": "features-guide-010",
+          "document_title": "Smart Wardrobe — Features & User Guide",
+          "heading": "9. Example user journey",
+          "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+          "page": 2,
+          "score": 0.739
+        }
+      ],
+      "llm_answer": "Smart Wardrobe uses six top-level categories: Tops, Bottoms, Dresses, Outerwear, Shoes, and Accessories.",
+      "llm_evidence": [
+        "The sample taxonomy uses six top-level categories: Tops, Bottoms, Dresses, Outerwear, Shoes, and Accessories. These are example categories for the exercise and may be refined during product development.",
+        "A user adds an item by uploading a photo and reviewing its details. Relevant fields include item name, category, color, pattern, material, season, and occasion. AI-assisted classification can propose these values, but users should be able to correct incorrect suggestions."
+      ],
+      "rejected_evidence": [],
+      "repair": {
+        "instruction": "Your answer is not strictly grounded: it drops the evidence's qualifier (example, sample, may) — keep that qualifier in the answer. Return the same JSON with the same evidence and a corrected answer.",
+        "first_checks": {
+          "unsupported_terms": [],
+          "hedge_dropped": true,
+          "evidence_hedges": [
+            "example",
+            "sample",
+            "may"
+          ],
+          "passed": false
+        },
+        "repaired_answer": "Smart Wardrobe uses example top-level categories: Tops, Bottoms, Dresses, Outerwear, Shoes, and Accessories.",
+        "repaired_checks": {
+          "unsupported_terms": [],
+          "hedge_dropped": false,
+          "evidence_hedges": [
+            "example",
+            "sample",
+            "may"
+          ],
+          "passed": true
+        }
+      },
+      "checks": {
+        "unsupported_terms": [],
+        "hedge_dropped": false,
+        "evidence_hedges": [
+          "example",
+          "sample",
+          "may"
+        ],
+        "passed": true
+      },
+      "mode": "LLM (local: ollama/qwen2.5:3b), after 1 grounding repair",
+      "answer": "Smart Wardrobe uses example top-level categories: Tops, Bottoms, Dresses, Outerwear, Shoes, and Accessories.",
+      "evidence": [
+        {
+          "quote": "The sample taxonomy uses six top-level categories: Tops, Bottoms, Dresses, Outerwear, Shoes, and Accessories.",
+          "chunk_id": "features-guide-004"
+        },
+        {
+          "quote": "These are example categories for the exercise and may be refined during product development.",
+          "chunk_id": "features-guide-004"
+        }
+      ],
+      "citations": [
+        {
+          "ref": 1,
+          "id": "features-guide-004",
+          "document_title": "Smart Wardrobe — Features & User Guide",
+          "heading": "3. Wardrobe categories",
+          "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+          "page": 1,
+          "score": 0.8234
+        }
+      ]
+    },
+    {
+      "expect": "answer",
+      "question": "What should a user do if the AI classifies a clothing item incorrectly?",
+      "top_score": 0.6454,
+      "retrieved": [
+        {
+          "id": "features-guide-008",
+          "document_title": "Smart Wardrobe — Features & User Guide",
+          "heading": "7. User corrections and trust",
+          "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+          "page": 1,
+          "score": 0.6454
+        },
+        {
+          "id": "technical-overview-004",
+          "document_title": "Smart Wardrobe — Technical Overview",
+          "heading": "3. AI classification workflow",
+          "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+          "page": 1,
+          "score": 0.6192
+        },
+        {
+          "id": "technical-overview-012",
+          "document_title": "Smart Wardrobe — Technical Overview",
+          "heading": "11. Proposed implementation sequence",
+          "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+          "page": 2,
+          "score": 0.5904
+        }
+      ],
+      "llm_answer": "Users should review AI-generated labels before relying on them.",
+      "llm_evidence": [
+        ". User corrections and trust\nAutomatic clothing recognition may misclassify category, color, pattern, or season. Users should review AI-generated labels before relying on them."
+      ],
+      "rejected_evidence": [],
+      "repair": null,
+      "checks": {
+        "unsupported_terms": [],
+        "hedge_dropped": false,
+        "evidence_hedges": [],
+        "passed": true
+      },
+      "mode": "LLM (local: ollama/qwen2.5:3b)",
+      "answer": "Users should review AI-generated labels before relying on them.",
+      "evidence": [
+        {
+          "quote": "Users should review AI-generated labels before relying on them.",
+          "chunk_id": "features-guide-008"
+        }
+      ],
+      "citations": [
+        {
+          "ref": 1,
+          "id": "features-guide-008",
+          "document_title": "Smart Wardrobe — Features & User Guide",
+          "heading": "7. User corrections and trust",
+          "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+          "page": 1,
+          "score": 0.6454
+        }
+      ]
+    },
+    {
+      "expect": "answer",
+      "question": "Which fields are in the proposed clothing item schema?",
+      "top_score": 0.7417,
+      "retrieved": [
+        {
+          "id": "technical-overview-003",
+          "document_title": "Smart Wardrobe — Technical Overview",
+          "heading": "2. Structured clothing records",
+          "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+          "page": 1,
+          "score": 0.7417
+        },
+        {
+          "id": "features-guide-003",
+          "document_title": "Smart Wardrobe — Features & User Guide",
+          "heading": "2. Adding clothing",
+          "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+          "page": 1,
+          "score": 0.5866
+        },
+        {
+          "id": "features-guide-004",
+          "document_title": "Smart Wardrobe — Features & User Guide",
+          "heading": "3. Wardrobe categories",
+          "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+          "page": 1,
+          "score": 0.5841
+        }
+      ],
+      "llm_answer": "The proposed clothing item schema includes item_id, owner_id, image_reference, name, category, color, pattern, material, season, occasion, created_at, and updated_at.",
+      "llm_evidence": [
+        "A suggested clothing item schema contains item_id, owner_id, image_reference, name, category, color, pattern, material, season, occasion, created_at, and updated_at."
+      ],
+      "rejected_evidence": [],
+      "repair": null,
+      "checks": {
+        "unsupported_terms": [],
+        "hedge_dropped": false,
+        "evidence_hedges": [
+          "suggested"
+        ],
+        "passed": true
+      },
+      "mode": "LLM (local: ollama/qwen2.5:3b)",
+      "answer": "The proposed clothing item schema includes item_id, owner_id, image_reference, name, category, color, pattern, material, season, occasion, created_at, and updated_at.",
+      "evidence": [
+        {
+          "quote": "A suggested clothing item schema contains item_id, owner_id, image_reference, name, category, color, pattern, material, season, occasion, created_at, and updated_at.",
+          "chunk_id": "technical-overview-003"
+        }
+      ],
+      "citations": [
+        {
+          "ref": 1,
+          "id": "technical-overview-003",
+          "document_title": "Smart Wardrobe — Technical Overview",
+          "heading": "2. Structured clothing records",
+          "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+          "page": 1,
+          "score": 0.7417
+        }
+      ]
+    },
+    {
+      "expect": "answer",
+      "question": "Is Supabase currently connected to the Smart Wardrobe app?",
+      "top_score": 0.7829,
+      "retrieved": [
+        {
+          "id": "technical-overview-005",
+          "document_title": "Smart Wardrobe — Technical Overview",
+          "heading": "4. Data storage option",
+          "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+          "page": 1,
+          "score": 0.7829
+        },
+        {
+          "id": "technical-overview-006",
+          "document_title": "Smart Wardrobe — Technical Overview",
+          "heading": "5. API responsibilities",
+          "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+          "page": 1,
+          "score": 0.5357
+        },
+        {
+          "id": "technical-overview-002",
+          "document_title": "Smart Wardrobe — Technical Overview",
+          "heading": "1. Application context",
+          "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+          "page": 1,
+          "score": 0.5329
+        }
+      ],
+      "llm_answer": "Supabase is not currently connected to the Smart Wardrobe app.",
+      "llm_evidence": [
+        "Smart Wardrobe — Technical Overview — 4. Data storage option\nSupabase is a candidate backend for authentication, relational clothing data, and image storage. This document does not assert that Supabase is currently connected or operational in the user's app."
+      ],
+      "rejected_evidence": [],
+      "repair": {
+        "instruction": "Your answer is not strictly grounded: it drops the evidence's qualifier (candidate, does not assert) — keep that qualifier in the answer. Return the same JSON with the same evidence and a corrected answer.",
+        "first_checks": {
+          "unsupported_terms": [],
+          "hedge_dropped": true,
+          "evidence_hedges": [
+            "candidate",
+            "does not assert"
+          ],
+          "passed": false
+        },
+        "repaired_answer": "Supabase is not currently connected to the Smart Wardrobe app based on the information provided.",
+        "repaired_checks": {
+          "unsupported_terms": [
+            "based",
+            "information",
+            "provided"
+          ],
+          "hedge_dropped": true,
+          "evidence_hedges": [
+            "candidate",
+            "does not assert"
+          ],
+          "passed": false
+        }
+      },
+      "checks": {
+        "unsupported_terms": [
+          "based",
+          "information",
+          "provided"
+        ],
+        "hedge_dropped": true,
+        "evidence_hedges": [
+          "candidate",
+          "does not assert"
+        ],
+        "passed": false
+      },
+      "mode": "EXTRACTIVE fallback (rule-based quotes; LLM answer failed grounding check)",
+      "answer": "\"Supabase is a candidate backend for authentication, relational clothing data, and image storage.\" \"This document does not assert that Supabase is currently connected or operational in the user's app.\"",
+      "evidence": [
+        {
+          "quote": "Supabase is a candidate backend for authentication, relational clothing data, and image storage.",
+          "chunk_id": "technical-overview-005"
+        },
+        {
+          "quote": "This document does not assert that Supabase is currently connected or operational in the user's app.",
+          "chunk_id": "technical-overview-005"
+        }
+      ],
+      "citations": [
+        {
+          "ref": 1,
+          "id": "technical-overview-005",
+          "document_title": "Smart Wardrobe — Technical Overview",
+          "heading": "4. Data storage option",
+          "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+          "page": 1,
+          "score": 0.7829
+        }
+      ]
+    },
+    {
+      "expect": "answer",
+      "question": "How should virtual try-on be designed so the provider can be replaced?",
+      "top_score": 0.5084,
+      "retrieved": [
+        {
+          "id": "features-guide-009",
+          "document_title": "Smart Wardrobe — Features & User Guide",
+          "heading": "8. Virtual try-on",
+          "source_file": "Smart_Wardrobe_Features_and_User_Guide.pdf",
+          "page": 1,
+          "score": 0.5084
+        },
+        {
+          "id": "technical-overview-007",
+          "document_title": "Smart Wardrobe — Technical Overview",
+          "heading": "6. Modular virtual try-on",
+          "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+          "page": 1,
+          "score": 0.5037
+        },
+        {
+          "id": "technical-overview-012",
+          "document_title": "Smart Wardrobe — Technical Overview",
+          "heading": "11. Proposed implementation sequence",
+          "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+          "page": 2,
+          "score": 0.2408
+        }
+      ],
+      "llm_answer": "Virtual try-on should be designed with a replaceable provider interface so that a commercial image-generation service can be swapped for an open-source model without changing the entire wardrobe application.",
+      "llm_evidence": [
+        "Virtual try-on should be isolated behind a replaceable provider interface. A future implementation could swap a commercial image-generation service for an open-source model without rewriting the entire wardrobe application."
+      ],
+      "rejected_evidence": [],
+      "repair": {
+        "instruction": "Your answer is not strictly grounded: it uses words that are not in the evidence (changing) — use the evidence's own wording instead; it drops the evidence's qualifier (future, could) — keep that qualifier in the answer. Return the same JSON with the same evidence and a corrected answer.",
+        "first_checks": {
+          "unsupported_terms": [
+            "changing"
+          ],
+          "hedge_dropped": true,
+          "evidence_hedges": [
+            "future",
+            "could"
+          ],
+          "passed": false
+        },
+        "repaired_answer": "Virtual try-on should be designed with a replaceable provider interface to allow a future implementation of swapping a commercial image-generation service for an open-source model without rewriting the entire wardrobe application.",
+        "repaired_checks": {
+          "unsupported_terms": [
+            "allow"
+          ],
+          "hedge_dropped": false,
+          "evidence_hedges": [
+            "future",
+            "could"
+          ],
+          "passed": false
+        }
+      },
+      "checks": {
+        "unsupported_terms": [
+          "allow"
+        ],
+        "hedge_dropped": false,
+        "evidence_hedges": [
+          "future",
+          "could"
+        ],
+        "passed": false
+      },
+      "mode": "EXTRACTIVE fallback (rule-based quotes; LLM answer failed grounding check)",
+      "answer": "\"Virtual try-on should be isolated behind a replaceable provider interface.\" \"A future implementation could swap a commercial image-generation service for an open-source model without rewriting the entire wardrobe application.\"",
+      "evidence": [
+        {
+          "quote": "Virtual try-on should be isolated behind a replaceable provider interface.",
+          "chunk_id": "technical-overview-007"
+        },
+        {
+          "quote": "A future implementation could swap a commercial image-generation service for an open-source model without rewriting the entire wardrobe application.",
+          "chunk_id": "technical-overview-007"
+        }
+      ],
+      "citations": [
+        {
+          "ref": 1,
+          "id": "technical-overview-007",
+          "document_title": "Smart Wardrobe — Technical Overview",
+          "heading": "6. Modular virtual try-on",
+          "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+          "page": 1,
+          "score": 0.5037
+        }
+      ]
+    },
+    {
+      "expect": "refuse",
+      "question": "How much does the Smart Wardrobe premium subscription cost per month?",
+      "top_score": 0.4469,
+      "retrieved": [
+        {
+          "id": "technical-overview-011",
+          "document_title": "Smart Wardrobe — Technical Overview",
+          "heading": "10. Limitations and security",
+          "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+          "page": 2,
+          "score": 0.4469
+        },
+        {
+          "id": "technical-overview-001",
+          "document_title": "Smart Wardrobe — Technical Overview",
+          "heading": "Document purpose",
+          "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+          "page": 1,
+          "score": 0.4358
+        },
+        {
+          "id": "technical-overview-012",
+          "document_title": "Smart Wardrobe — Technical Overview",
+          "heading": "11. Proposed implementation sequence",
+          "source_file": "Smart_Wardrobe_Technical_Overview.pdf",
+          "page": 2,
+          "score": 0.4262
+        }
+      ],
+      "llm_answer": "This information is not available in the Smart Wardrobe documents.",
+      "llm_evidence": [
+        ""
+      ],
+      "rejected_evidence": [],
+      "mode": "REFUSAL (LLM: qwen2.5:3b)",
+      "answer": "This information is not available in the Smart Wardrobe documents.",
+      "evidence": [],
+      "citations": []
+    }
+  ]
+}
